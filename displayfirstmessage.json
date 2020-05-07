@@ -1,0 +1,29 @@
+{
+  "apiVersion": "v1",
+  "kind": "Pod",
+  "metadata": {
+    "name": "displayfirstmessage",
+    "namespace": "default",
+    "labels": {
+      "name": "displayfirstmessage"
+    }
+  },
+  "spec": {
+    "containers": [
+      {
+        "name": "displayfirstmessage",
+        "image": "nazarm1994/displayfirstmessage:6",
+        "ports": [
+          {
+            "containerPort": 8081
+          }
+        ],
+        "command": [
+          "/bin/sh",
+          "-ec",
+          "stefuna --config=displayFirstMessage_config"
+        ]
+      }
+    ]
+  }
+}

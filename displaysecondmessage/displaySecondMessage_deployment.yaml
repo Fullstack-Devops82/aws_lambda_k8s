@@ -1,0 +1,20 @@
+ apiVersion: apps/v1
+ kind: Deployment
+ metadata:
+   name: displaysecondmessage-deployment
+ spec:
+   replicas: 1
+   selector:
+     matchLabels:
+       app: displaysecondmessage
+   template:
+     metadata:
+       labels:
+         app: displaysecondmessage
+     spec:
+       containers:
+         - name: displaysecondmessage
+           image: nazarm1994/displaysecondmessage:3
+           ports:
+             - containerPort: 8082
+           command: ["/bin/sh", "-ec", "stefuna --config=displaySecondMessage_config"]

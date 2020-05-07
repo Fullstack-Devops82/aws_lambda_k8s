@@ -1,0 +1,20 @@
+ apiVersion: apps/v1
+ kind: Deployment
+ metadata:
+   name: calculatetwonumber-deployment
+ spec:
+   replicas: 1
+   selector:
+     matchLabels:
+       app: calculatetwonumber
+   template:
+     metadata:
+       labels:
+         app: calculatetwonumber
+     spec:
+       containers:
+         - name: calculatetwonumber
+           image: nazarm1994/calculatetwonumber:5
+           ports:
+             - containerPort: 8080
+           command: ["/bin/sh", "-ec", "stefuna --config=calculateTwoNumber_config"]

@@ -1,0 +1,20 @@
+ apiVersion: apps/v1
+ kind: Deployment
+ metadata:
+   name: displayfirstmessage-deployment
+ spec:
+   replicas: 1
+   selector:
+     matchLabels:
+       app: displayfirstmessage
+   template:
+     metadata:
+       labels:
+         app: displayfirstmessage
+     spec:
+       containers:
+         - name: displayfirstmessage
+           image: nazarm1994/displayfirstmessage:4
+           ports:
+             - containerPort: 8081
+           command: ["/bin/sh", "-ec", "stefuna --config=displayFirstMessage_config"]

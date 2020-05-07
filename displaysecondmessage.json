@@ -1,0 +1,29 @@
+{
+  "apiVersion": "v1",
+  "kind": "Pod",
+  "metadata": {
+    "name": "displaysecondmessage",
+    "namespace": "default",
+    "labels": {
+      "name": "displaysecondmessage"
+    }
+  },
+  "spec": {
+    "containers": [
+      {
+        "name": "displaysecondmessage",
+        "image": "nazarm1994/displaysecondmessage:4",
+        "ports": [
+          {
+            "containerPort": 8082
+          }
+        ],
+        "command": [
+          "/bin/sh",
+          "-ec",
+          "stefuna --config=displaySecondMessage_config"
+        ]
+      }
+    ]
+  }
+}
