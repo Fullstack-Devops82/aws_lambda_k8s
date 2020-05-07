@@ -1,7 +1,7 @@
 This is an example to trigger Web API on Kubernetes using AWS Lambda and Step Function.
 
 Here are some commands to build the environment.
-
+```sh
 $ pip install boto3
 $ pip install stefuna
 $ pip install awscli
@@ -21,3 +21,4 @@ $ stefuna --config=displaySecondMessage_config
 
 - deploy
 $ serverless deploy
+```
